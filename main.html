@@ -1,0 +1,61 @@
+html, css, js
+<!DOCTYPE html>
+<html lang="en" ng-app="seriesApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Series Recommendations</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body ng-controller="seriesController">
+
+    <!-- Header Section -->
+    <header>
+        <div class="navbar">
+            <h1 class="logo">Top Series Picks</h1>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Popular Series</a>
+                <a href="#">New Releases</a>
+                <a href="#">Platforms</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background-image: url('https://res.cloudinary.com/dcofr8eie/image/upload/v1726315447/game-of-thrones-banner_i21ca8.jpg');">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h2 class="hero-title">Game of Thrones</h2>
+            <p class="hero-description">Venture into the world of Westeros. Unravel the power struggles, dragons, and more.</p>
+            <button class="cta-button" ng-click="getSeriesInfo('Game of Thrones')">Watch on {{ selectedSeries.platform }}</button>
+        </div>
+    </section>
+
+    <!-- Series Recommendations Section -->
+    <section class="series-section">
+        <h2>Best Series of All Time</h2>
+        <div class="series-grid">
+            <div class="series-card" ng-repeat="series in seriesList" ng-click="getSeriesInfo(series.name)">
+                <div class="series-image-container">
+                    <img ng-src="{{ series.image }}" alt="{{ series.name }}" class="series-image">
+                </div>
+                <h3>{{ series.name }}</h3>
+                <p>{{ series.description }}</p>
+                <div class="platform">
+                    <span>Available on: {{ series.platform }}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Best Series Recommendations | Created with passion for series fans.</p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Header */
+header {
+    background-color: #222;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar nav a {
+    margin-left: 30px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.logo {
+    color: #ff6b35;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease;
+}
+
+.hero-description {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    background-color: #ff6b35;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e05c2a;
+}
+
+/* Keyframe animations */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Series Section */
+.series-section {
+    padding: 60px 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.series-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.series-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.series-card {
+    background: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.series-card:hover {
+    transform: scale(1.05);
+}
+
+.series-image-container {
+    height: 300px;
+    overflow: hidden;
+}
+
+.series-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.series-card:hover .series-image {
+    transform: scale(1.1);
+}
+
+.series-card h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+}
+
+.series-card p {
+    padding: 0 15px;
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.platform {
+    font-size: 1rem;
+    color: #888;
+    padding: 10px 15px;
+}
+
+footer {
+    padding: 20px;
+    background-color: #222;
+    color: white;
+    text-align: center;
+}
